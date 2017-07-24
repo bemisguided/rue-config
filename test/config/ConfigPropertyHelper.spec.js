@@ -17,9 +17,9 @@
  *
  * @flow
  */
-import ConfigPropertyHelper from '../lib/ConfigPropertyHelper';
+import ConfigPropertyHelper from '../../lib/config/ConfigPropertyHelper';
 
-describe('./ConfigPropertyHelper.js', () => {
+describe('./config/ConfigPropertyHelper.js', () => {
 
   describe('isConfigProperty()', () => {
 

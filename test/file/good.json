@@ -1,0 +1,10 @@
+{
+  "values1": {
+    "valueA": "value1A",
+    "valueB": "value1B"
+  },
+  "values2": {
+    "valueA": "value2A",
+    "valueB": "value2B"
+  }
+}
