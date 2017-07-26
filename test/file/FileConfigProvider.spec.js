@@ -18,6 +18,7 @@
  * @flow
  */
 import FileConfigProvider from '../../lib/file/FileConfigProvider';
+
 describe('./memory/FileConfigProvider.js', () => {
 
   describe('FileConfigProvider.configure()', () => {

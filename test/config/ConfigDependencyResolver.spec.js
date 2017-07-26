@@ -21,7 +21,6 @@ import { DependencyContext, InjectableEntry, InjectableManager, InjectableResolv
 import ConfigDependencyResolver from '../../lib/config/ConfigDependencyResolver';
 import * as ConfigConstants from '../../lib/config/ConfigConstants';
 
-
 describe('./ConfigDependencyResolver.js', () => {
 
   let configDepedendencyResolver: ConfigDependencyResolver;

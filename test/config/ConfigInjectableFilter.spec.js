@@ -43,10 +43,10 @@ describe('./config/ConfigInjectableFilter.js', () => {
 
   describe('.filter()', () => {
 
-    it('returns the property value when the dependency name contains config property notation', () => {
+    it('returns the exact property value when the dependency name contains only a config property notation', () => {
       // Setup
       let propertyName = 'property.name';
-      let expected = 'test';
+      let expected = 1234;
       let configProvider = new StubConfigProvider();
       configProvider.value = expected;
 
@@ -55,6 +55,21 @@ describe('./config/ConfigInjectableFilter.js', () => {
 
       // Assert
       expect(result).toEqual(expected);
+      expect(configProvider.name).toEqual(propertyName);
+    });
+
+    it('returns the property value within a string when the dependency name contains config property notation within a string', () => {
+      // Setup
+      let propertyName = 'property.name';
+      let expected = 1234;
+      let configProvider = new StubConfigProvider();
+      configProvider.value = expected;
+
+      // Execute
+      let result = configInjectableFilter.filter('anything', `this is a \$\{${propertyName}\} number`, configProvider);
+
+      // Assert
+      expect(result).toEqual(`this is a ${expected} number`);
       expect(configProvider.name).toEqual(propertyName);
     });
 
