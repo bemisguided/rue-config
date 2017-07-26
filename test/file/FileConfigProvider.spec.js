@@ -31,10 +31,10 @@ describe('./memory/FileConfigProvider.js', () => {
 
       // Assert
       factoryFunction()
-          .then((fileConfigProvider) => {
-            expect((fileConfigProvider: FileConfigProvider).properties).toEqual(expected);
-            done();
-          });
+        .then((fileConfigProvider) => {
+          expect((fileConfigProvider: FileConfigProvider).properties).toEqual(expected);
+          done();
+        });
     });
 
     it('handles a non-existend file', (done) => {
@@ -45,10 +45,10 @@ describe('./memory/FileConfigProvider.js', () => {
 
       // Assert
       factoryFunction()
-          .catch((error) => {
-            expect(error.message).toContain('ENOENT: no such file or directory, open');
-            done();
-          });
+        .catch((error) => {
+          expect(error.message).toContain('ENOENT: no such file or directory, open');
+          done();
+        });
     });
 
     it('handles a badly formatted JSON file', (done) => {
@@ -59,10 +59,10 @@ describe('./memory/FileConfigProvider.js', () => {
 
       // Assert
       factoryFunction()
-          .catch((error) => {
-            expect(error.message).toEqual('Unexpected token v in JSON at position 4');
-            done();
-          });
+        .catch((error) => {
+          expect(error.message).toEqual('Unexpected token v in JSON at position 4');
+          done();
+        });
     });
 
   });

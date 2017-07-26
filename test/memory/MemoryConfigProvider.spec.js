@@ -33,10 +33,10 @@ describe('./memory/FileConfigProvider.js', () => {
 
       // Assert
       factoryFunction()
-          .then((memoryConfigProvider) => {
-            expect(memoryConfigProvider.properties).toEqual(properties);
-            done();
-          });
+        .then((memoryConfigProvider) => {
+          expect(memoryConfigProvider.properties).toEqual(properties);
+          done();
+        });
     });
 
   });
