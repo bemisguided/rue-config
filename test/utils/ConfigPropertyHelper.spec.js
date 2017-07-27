@@ -85,9 +85,9 @@ describe('./config/ConfigPropertyHelper.js', () => {
       let obj = {
         a: {
           config: {
-            property: expected
-          }
-        }
+            property: expected,
+          },
+        },
       };
 
       // Assert
@@ -109,6 +109,7 @@ describe('./config/ConfigPropertyHelper.js', () => {
         if (name === 'property2') {
           return expected2;
         }
+        return undefined;
       };
 
       // Assert

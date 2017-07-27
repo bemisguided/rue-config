@@ -33,7 +33,7 @@ describe('./memory/FileConfigProvider.js', () => {
       // Assert
       factoryFunction()
         .then((fileConfigProvider) => {
-          expect((fileConfigProvider: FileConfigProvider).properties).toEqual(expected);
+          expect(fileConfigProvider.properties).toEqual(expected);
           done();
         });
     });
@@ -80,7 +80,7 @@ describe('./memory/FileConfigProvider.js', () => {
         values2: {
           valueA: 'value2A',
           valueB: 'value2B',
-        }
+        },
       };
       let memoryConfigProvider = new FileConfigProvider(properties);
 

@@ -75,7 +75,6 @@ describe('./config/ConfigInjectableFilter.js', () => {
 
     it('returns the Config Provider instance when the dependency name does not contain config property notation', () => {
       // Setup
-      let propertyName = 'property.name';
       let expected = 'test';
       let configProvider = new StubConfigProvider();
       configProvider.value = expected;

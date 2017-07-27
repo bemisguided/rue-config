@@ -53,7 +53,7 @@ describe('./memory/FileConfigProvider.js', () => {
         values2: {
           valueA: 'value2A',
           valueB: 'value2B',
-        }
+        },
       };
       let memoryConfigProvider = new MemoryConfigProvider(properties);
 
