@@ -1,6 +1,6 @@
 {
   "name": "rue-config",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "rue - configuration extension",
   "main": "dist/rue-config.js",
   "engines": {
@@ -80,6 +80,5 @@
       "html"
     ]
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
