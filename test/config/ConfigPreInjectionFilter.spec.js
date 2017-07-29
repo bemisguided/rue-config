@@ -18,7 +18,7 @@
  * @flow
  */
 import ConfigProvider from '../../lib/config/ConfigProvider';
-import ConfigInjectableFilter from '../../lib/config/ConfigInjectableFilter';
+import ConfigPreInjectionFilter from '../../lib/config/ConfigPreInjectionFilter';
 
 class StubConfigProvider extends ConfigProvider {
 
@@ -33,12 +33,12 @@ class StubConfigProvider extends ConfigProvider {
 
 }
 
-describe('./config/ConfigInjectableFilter.js', () => {
+describe('./config/ConfigPreInjectionFilter.js', () => {
 
-  let configInjectableFilter: ConfigInjectableFilter;
+  let configPreInjectionFilter: ConfigPreInjectionFilter;
 
   beforeEach(() => {
-    configInjectableFilter = new ConfigInjectableFilter();
+    configPreInjectionFilter = new ConfigPreInjectionFilter();
   });
 
   describe('.filter()', () => {
@@ -51,7 +51,7 @@ describe('./config/ConfigInjectableFilter.js', () => {
       configProvider.value = expected;
 
       // Execute
-      let result = configInjectableFilter.filter('anything', `\$\{${propertyName}\}`, configProvider);
+      let result = configPreInjectionFilter.filter('anything', `\$\{${propertyName}\}`, configProvider);
 
       // Assert
       expect(result).toEqual(expected);
@@ -66,7 +66,7 @@ describe('./config/ConfigInjectableFilter.js', () => {
       configProvider.value = expected;
 
       // Execute
-      let result = configInjectableFilter.filter('anything', `this is a \$\{${propertyName}\} number`, configProvider);
+      let result = configPreInjectionFilter.filter('anything', `this is a \$\{${propertyName}\} number`, configProvider);
 
       // Assert
       expect(result).toEqual(`this is a ${expected} number`);
@@ -80,7 +80,7 @@ describe('./config/ConfigInjectableFilter.js', () => {
       configProvider.value = expected;
 
       // Execute
-      let result = configInjectableFilter.filter('anything', 'DependencyName', configProvider);
+      let result = configPreInjectionFilter.filter('anything', 'DependencyName', configProvider);
 
       // Assert
       expect(result).toEqual(configProvider);

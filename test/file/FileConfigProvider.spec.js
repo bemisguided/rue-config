@@ -33,6 +33,7 @@ describe('./memory/FileConfigProvider.js', () => {
       // Assert
       factoryFunction()
         .then((fileConfigProvider) => {
+          expect(fileConfigProvider).toBeInstanceOf(FileConfigProvider);
           expect(fileConfigProvider.properties).toEqual(expected);
           done();
         });

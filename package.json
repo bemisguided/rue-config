@@ -1,8 +1,8 @@
 {
   "name": "rue-config",
-  "version": "0.0.1",
+  "version": "0.8.0",
   "description": "rue - configuration extension",
-  "main": "index.js",
+  "main": "dist/rue-config.js",
   "engines": {
     "node": ">=6.11.0"
   },
@@ -12,7 +12,9 @@
     "ioc",
     "inversion of control",
     "di",
-    "dependency injection"
+    "dependency injection",
+    "configuration",
+    "config"
   ],
   "scripts": {
     "clean": "rimraf dist && rimraf coverage",
@@ -49,16 +51,16 @@
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-relay": "0.0.8",
+    "eslint-plugin-relay": "0.0.10",
     "flow-bin": "^0.51.0",
     "flow-copy-source": "^1.2.0",
     "jest": "^20.0.4",
     "q": "^1.5.0",
     "rimraf": "^2.6.1",
-    "rue": "^0.9.0"
+    "rue": "^0.9.1"
   },
   "peerDependencies": {
-    "rue": "0.9.0"
+    "rue": "^0.9.0"
   },
   "files": [
     "index.js",
@@ -79,6 +81,5 @@
     ]
   },
   "dependencies": {
-    "dot-object": "^1.6.0"
   }
 }

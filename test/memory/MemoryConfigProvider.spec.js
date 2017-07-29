@@ -34,6 +34,7 @@ describe('./memory/FileConfigProvider.js', () => {
       // Assert
       factoryFunction()
         .then((memoryConfigProvider) => {
+          expect(memoryConfigProvider).toBeInstanceOf(MemoryConfigProvider);
           expect(memoryConfigProvider.properties).toEqual(properties);
           done();
         });
