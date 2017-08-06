@@ -20,7 +20,7 @@
 import ConfigDependencyNameMapper from '../../lib/config/ConfigDependencyNameMapper';
 import * as ConfigConstants from '../../lib/config/ConfigConstants';
 
-describe('./ConfigDependencyNameMapper.js', () => {
+describe('./config/ConfigDependencyNameMapper.js', () => {
 
   let configDependencyNameMapper: ConfigDependencyNameMapper;
 
