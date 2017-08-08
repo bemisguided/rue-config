@@ -78,7 +78,8 @@ describe('./config/ConfigProviderBuilder.js', () => {
       expect(injectableEntry.singleton).toEqual(true);
       expect(injectableEntry.profileNames).toEqual(profiles);
       expect(injectableEntry.filter).toBeInstanceOf(ConfigPreInjectionFilter);
-      expect(injectableEntry.resolver.target).toEqual(configProviderFactoryFunction);
+      // $FlowFixMe (fn is a property of the FactoryInjectableResolver)
+      expect(injectableEntry.resolver.fn).toEqual(configProviderFactoryFunction);
 
       expect(container.dependencyNameMappers[0]).toBeInstanceOf(ConfigDependencyNameMapper);
     });
