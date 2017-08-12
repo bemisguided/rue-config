@@ -18,7 +18,7 @@
  * @flow
  */
 import { Container } from 'rue';
-import * as ConfigConstants from '../../lib/config/ConfigConstants';
+import ConfigConstants from '../../lib/config/ConfigConstants';
 import ConfigDependencyNameMapper from '../../lib/config/ConfigDependencyNameMapper';
 import ConfigProviderBuilder from '../../lib/config/ConfigProviderBuilder';
 import ConfigProvider from '../../lib/config/ConfigProvider';

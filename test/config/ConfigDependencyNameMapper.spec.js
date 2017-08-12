@@ -18,7 +18,7 @@
  * @flow
  */
 import ConfigDependencyNameMapper from '../../lib/config/ConfigDependencyNameMapper';
-import * as ConfigConstants from '../../lib/config/ConfigConstants';
+import ConfigConstants from '../../lib/config/ConfigConstants';
 
 describe('./config/ConfigDependencyNameMapper.js', () => {
 
