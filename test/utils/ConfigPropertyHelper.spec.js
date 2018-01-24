@@ -53,6 +53,7 @@ describe('./config/ConfigPropertyHelper.js', () => {
       expect(ConfigPropertyHelper.hasConfigProperties('dds${config.property}')).toBeTruthy();
       expect(ConfigPropertyHelper.hasConfigProperties('${config.property}fdsfsd')).toBeTruthy();
       expect(ConfigPropertyHelper.hasConfigProperties('  ${config.property} ')).toBeTruthy();
+      expect(ConfigPropertyHelper.hasConfigProperties('${ENV_STYLE_PROPERTY}')).toBeTruthy();
     });
 
     it('correctly indicates when a string does not have a config property expression present anywhere in the string', () => {
@@ -78,6 +79,17 @@ describe('./config/ConfigPropertyHelper.js', () => {
   });
 
   describe('getConfigPropertyValue()', () => {
+
+    it('correctly returns the config property value for a flat object', () => {
+      // Setup
+      let expected = 'test';
+      let env = {
+        PROPERTY_NAME: expected,
+      };
+
+      // Assert
+      expect(ConfigPropertyHelper.getConfigPropertyValue('PROPERTY_NAME', env)).toEqual(expected);
+    });
 
     it('correctly returns the config property value for a given config property expression and object', () => {
       // Setup
