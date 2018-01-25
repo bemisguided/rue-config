@@ -26,6 +26,7 @@ describe('./config/ConfigPropertyHelper.js', () => {
     it('correctly indicates that string has a config property expression present that is the entire string', () => {
       // Assert
       expect(ConfigPropertyHelper.isSingleConfigProperty('${a.config.property}')).toBeTruthy();
+      expect(ConfigPropertyHelper.isSingleConfigProperty('${ENV_STYLE_PROPERTY}')).toBeTruthy();
     });
 
     it('correctly indicates when a string does not have a config property expression present', () => {
@@ -69,6 +70,7 @@ describe('./config/ConfigPropertyHelper.js', () => {
       // Assert
       expect(ConfigPropertyHelper.getSingleConfigProperty('${a.config.property}')).toEqual('a.config.property');
       expect(ConfigPropertyHelper.getSingleConfigProperty('${another.config.property}')).toEqual('another.config.property');
+      expect(ConfigPropertyHelper.getSingleConfigProperty('${ENV_STYLE_PROPERTY}')).toEqual('ENV_STYLE_PROPERTY');
     });
 
     it('correctly returns null if there is no config property expression', () => {
@@ -114,6 +116,7 @@ describe('./config/ConfigPropertyHelper.js', () => {
       // Setup
       let expected1 = 'test1';
       let expected2 = 'test2';
+      let expected3 = 'test3';
       let resolver = (name: string) => {
         if (name === 'property1') {
           return expected1;
@@ -121,12 +124,15 @@ describe('./config/ConfigPropertyHelper.js', () => {
         if (name === 'property2') {
           return expected2;
         }
+        if (name === 'PROPERTY_3') {
+          return expected3;
+        }
         return undefined;
       };
 
       // Assert
-      let result = ConfigPropertyHelper.replaceConfigProperties('this ${property1} is ${property2} ', resolver);
-      expect(result).toEqual('this test1 is test2 ');
+      let result = ConfigPropertyHelper.replaceConfigProperties('this ${property1} is ${property2} other ${PROPERTY_3}', resolver);
+      expect(result).toEqual('this test1 is test2 other test3');
     });
 
   });
